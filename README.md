@@ -12,3 +12,21 @@ To run backend:
     receive a key. Alternatively you may create your own google cloud project with text to speech
     and use the api key from that
 7. you should be good to run the backend server. just run "npm start" 
+
+
+API Refernce:
+URL: http://localhost:{port}/api/text-to-speech
+
+Body req: {
+    "text": "your text here"
+}
+
+Response {
+      "audio": [
+        {
+            "audioContent": {
+                "type": "Buffer",
+                "data": [],
+            }
+        }
+}
