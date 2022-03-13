@@ -25,6 +25,8 @@ The endpoint takes in a text string from the request body, and passes it to the 
 Req: 
  <br/> {
     <br />    "text": "your text here"
+    <br/>    "language: "en-US"
+    <br/>      "gender": "NEUTRAL"
  <br/> }
 
  <br/> Response

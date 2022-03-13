@@ -22,12 +22,12 @@ app.use(bodyParser.json());
  * @param {string} text 
  * @returns {bytes} audio
  */
-async function getAudioByteStream(text) {
+async function getAudioByteStream(text, langCode, voiceGender) {
     // Construct the request
     const request = {
         input: {text: text},
         // Select the language and SSML Voice
-        voice: {languageCode: 'en-US', ssmlGender: 'NEUTRAL'},
+        voice: {languageCode: langCode, ssmlGender: voiceGender},
 
         // Select the type of audio encoding
         audioConfig: {audioEncoding: 'MP3'},
@@ -39,15 +39,18 @@ async function getAudioByteStream(text) {
 
 
 /**
- * The function return a base64 encoded audio file to client
+ * The function returns a base64 encoded audio file to client
  * @param {string} text
  * @return {json} audio
  */
 app.get("/api/text-to-speech", (req, res) => {
     const text = req.body.text;
+    const languageCode = req.body.language;
+    const ssmlGender = req.body.gender;
+
     console.log(text);
 
-    getAudioByteStream(text).then(audio => {
+    getAudioByteStream(text, languageCode, ssmlGender).then(audio => {
         res.json({ audio });
         res.status(200);
         res.send();
