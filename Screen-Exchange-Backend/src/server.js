@@ -53,8 +53,7 @@ app.get("/api/text-to-speech", (req, res) => {
         res.send();
     }).catch(err => {
         console.error('ERROR:', err);
-        res.status(500);
-        res.send();
+        res.status(500).send(err);
     });
     
 });
