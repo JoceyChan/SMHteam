@@ -14,19 +14,21 @@ To run backend:
 7. you should be good to run the backend server. just run "npm start" 
 
 
-API Refernce:
-URL: http://localhost:{port}/api/text-to-speech
+ <br/> API Refernce: 
+ <br/> URL: http://localhost:{port}/api/text-to-speech
 
-Body req: {
-    "text": "your text here"
-}
+Req: 
+ <br/> {
+    <br /> "text": "your text here"
+ <br/> }
 
-Response {
-      "audio": [
-        {
-            "audioContent": {
-                "type": "Buffer",
-                "data": [],
-            }
-        }
-}
+ <br/> Response
+  <br/> {
+      <br/> "audio": [
+         <br/> {
+             <br/>"audioContent":  <br/>{
+                <br/> "type": "Buffer",
+                 <br/>"data": [],
+            <br/> }
+         <br/>}
+ <br/>}
