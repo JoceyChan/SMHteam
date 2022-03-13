@@ -14,9 +14,14 @@ To run backend:
 7. you should be good to run the backend server. just run "npm start" 
 
 
- <br/> API Refernce: 
- <br/> URL: http://localhost:{port}/api/text-to-speech
+ <br/> API Reference: 
+ <br/> Base URL: http://localhost:{port}/api
 
+Endpoint:
+<br/> /text-to-speech
+
+The endpoint takes in a text string from the request body, and passes it to the Google 
+<br/> text to speech API. It then returns a json response that contains the audio, and audio type, and audio data. <br/> To use the audio it will need to be decoded from base64 to MP3 client side.
 Req: 
  <br/> {
     <br />    "text": "your text here"
