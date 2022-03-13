@@ -43,7 +43,7 @@ async function getAudioByteStream(text) {
  * @param {string} text
  * @return {json} audio
  */
-app.post("/api/text-to-speech", (req, res) => {
+app.get("/api/text-to-speech", (req, res) => {
     const text = req.body.text;
     console.log(text);
 
