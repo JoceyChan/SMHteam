@@ -22,7 +22,8 @@ Endpoint:
 
 The endpoint takes in a text string from the request body, and passes it to the Google 
 <br/> text to speech API. It then returns a json response that contains the audio, and audio type, and audio data. <br/> To use the audio it will need to be decoded from base64 to MP3 client side.
-Req: 
+Req:
+`
  <br/> {
     <br />    "text": "your text here"
     <br/>    "language: "en-US"
@@ -40,3 +41,4 @@ Req:
             <br/>        }
          <br/>    }
  <br/>}
+ `
