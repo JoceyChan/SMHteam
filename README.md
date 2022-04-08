@@ -41,4 +41,13 @@ Req:
             <br/>        }
          <br/>    }
  <br/>}
- `
+
+ ###Example cURL Request
+
+ curl --location --request GET 'http://localhost:8080/api/text-to-speech' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "text": "Hello Sreeda, Steven, Jaqi, and Jocelyn",
+    "language": "en-US", 
+    "gender" : "Neutral"
+}'
