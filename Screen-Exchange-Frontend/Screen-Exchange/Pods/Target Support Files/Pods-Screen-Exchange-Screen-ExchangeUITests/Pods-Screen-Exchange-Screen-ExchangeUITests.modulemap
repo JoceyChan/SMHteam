@@ -1,0 +1,6 @@
+framework module Pods_Screen_Exchange_Screen_ExchangeUITests {
+  umbrella header "Pods-Screen-Exchange-Screen-ExchangeUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

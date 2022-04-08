@@ -1,0 +1,6 @@
+framework module Pods_Screen_Exchange {
+  umbrella header "Pods-Screen-Exchange-umbrella.h"
+
+  export *
+  module * { export * }
+}
