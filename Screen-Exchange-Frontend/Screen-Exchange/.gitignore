@@ -4,7 +4,7 @@
 
 ##Finder/File Explorer Generated data
 *.DS_Store
-
+../../*.DS_Store
 .Trashes
 
 *.swp
