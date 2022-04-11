@@ -4,9 +4,10 @@
 1. Download and install [xcode](https://developer.apple.com/xcode/)
 2. CD into this projects root directory
 3. Go int `./Screen-Exchange-Frontend/Screen-Exchange`
-4. Open the `./Screen-Exchange.xcworkspace` file
-5. Your ready to start coding
-6. To run the app, at the top of xcode choose a simulator and then click the play button
+4. Run the following command `Pod install --verbose`
+5. Open the `./Screen-Exchange.xcworkspace` file
+6. Your ready to start coding
+7. To run the app, at the top of xcode choose a simulator and then click the play button
 
 #### New to xcode and swift?
 
