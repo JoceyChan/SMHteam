@@ -27,14 +27,14 @@ class ExchangeController: UIViewController {
     
     
     @IBAction func onPrimaryCurrencyChange(_ sender: Any) {
-        SynthesizerService.speak(text: primaryCurrencyTextField.text ?? "")
+        speak(with: primaryCurrencyTextField.text ?? "")
     }
     
     @IBAction func updatePrimaryCurrency(_ sender: Any) {
         primaryAmount = primaryAmount + 1
         primaryCurrencyTextField.text = "$\(primaryAmount!) CAD"
         
-        speak(with: primaryCurrencyTextField.text ?? "")
+        
         
     }
     

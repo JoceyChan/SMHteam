@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0D96D9C627B145120F6AF5BF /* Pods_Screen_ExchangeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A600FB4492971F8FABD8E52D /* Pods_Screen_ExchangeTests.framework */; };
+		A10E9B8B2803AB6A00732063 /* PrimaryCurrencyPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10E9B8A2803AB6900732063 /* PrimaryCurrencyPickerController.swift */; };
+		A10E9B8D2803AB8900732063 /* SecondaryCurrencyPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10E9B8C2803AB8900732063 /* SecondaryCurrencyPickerController.swift */; };
+		A10E9B8F2803ABFE00732063 /* PrimaryCurrencyPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A10E9B8E2803ABFE00732063 /* PrimaryCurrencyPicker.storyboard */; };
+		A10E9B912803AC1600732063 /* SecondaryCurrencyPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A10E9B902803AC1600732063 /* SecondaryCurrencyPicker.storyboard */; };
+		A10E9B932803AC3400732063 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A10E9B922803AC3400732063 /* Settings.storyboard */; };
+		A10E9B952803AC9700732063 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10E9B942803AC9700732063 /* SettingsController.swift */; };
 		A1CF8CDC2800DD4500CF1706 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CF8CDB2800DD4500CF1706 /* AppDelegate.swift */; };
 		A1CF8CDE2800DD4500CF1706 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CF8CDD2800DD4500CF1706 /* SceneDelegate.swift */; };
 		A1CF8CE02800DD4500CF1706 /* ExchangeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CF8CDF2800DD4500CF1706 /* ExchangeController.swift */; };
@@ -18,7 +24,6 @@
 		A1CF8CFF2800DD4800CF1706 /* Screen_ExchangeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CF8CFE2800DD4800CF1706 /* Screen_ExchangeUITestsLaunchTests.swift */; };
 		A1CF8D152800F8BC00CF1706 /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CF8D142800F8BC00CF1706 /* SpeechService.swift */; };
 		A1CF8D17280125CD00CF1706 /* SpeechServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CF8D16280125CD00CF1706 /* SpeechServiceTests.swift */; };
-		A1CF8D19280282BA00CF1706 /* SynthesizerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CF8D18280282BA00CF1706 /* SynthesizerService.swift */; };
 		E85DB43D1974BDB0CA261193 /* Pods_Screen_Exchange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84F0A980E3367A908F877DE /* Pods_Screen_Exchange.framework */; };
 		EEBF3F92B0FF8226AD661F46 /* Pods_Screen_Exchange_Screen_ExchangeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F34B9E90F5EEA7C4100F3296 /* Pods_Screen_Exchange_Screen_ExchangeUITests.framework */; };
 /* End PBXBuildFile section */
@@ -45,6 +50,12 @@
 		56940BA4BF9FA5FBD5D3515C /* Pods-Screen-Exchange-Screen-ExchangeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Screen-Exchange-Screen-ExchangeUITests.release.xcconfig"; path = "Target Support Files/Pods-Screen-Exchange-Screen-ExchangeUITests/Pods-Screen-Exchange-Screen-ExchangeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5A292FE45E654247E504A9ED /* Pods-Screen-ExchangeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Screen-ExchangeTests.release.xcconfig"; path = "Target Support Files/Pods-Screen-ExchangeTests/Pods-Screen-ExchangeTests.release.xcconfig"; sourceTree = "<group>"; };
 		9222C8F86FBFC390FD901DE0 /* Pods-Screen-Exchange.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Screen-Exchange.release.xcconfig"; path = "Target Support Files/Pods-Screen-Exchange/Pods-Screen-Exchange.release.xcconfig"; sourceTree = "<group>"; };
+		A10E9B8A2803AB6900732063 /* PrimaryCurrencyPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PrimaryCurrencyPickerController.swift; path = "Screen-Exchange/Controllers/PrimaryCurrencyPickerController.swift"; sourceTree = SOURCE_ROOT; };
+		A10E9B8C2803AB8900732063 /* SecondaryCurrencyPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryCurrencyPickerController.swift; sourceTree = "<group>"; };
+		A10E9B8E2803ABFE00732063 /* PrimaryCurrencyPicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PrimaryCurrencyPicker.storyboard; sourceTree = "<group>"; };
+		A10E9B902803AC1600732063 /* SecondaryCurrencyPicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondaryCurrencyPicker.storyboard; sourceTree = "<group>"; };
+		A10E9B922803AC3400732063 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		A10E9B942803AC9700732063 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		A1CF8CD82800DD4500CF1706 /* Screen-Exchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Screen-Exchange.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1CF8CDB2800DD4500CF1706 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1CF8CDD2800DD4500CF1706 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +70,6 @@
 		A1CF8CFE2800DD4800CF1706 /* Screen_ExchangeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen_ExchangeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A1CF8D142800F8BC00CF1706 /* SpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechService.swift; sourceTree = "<group>"; };
 		A1CF8D16280125CD00CF1706 /* SpeechServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechServiceTests.swift; sourceTree = "<group>"; };
-		A1CF8D18280282BA00CF1706 /* SynthesizerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynthesizerService.swift; sourceTree = "<group>"; };
 		A600FB4492971F8FABD8E52D /* Pods_Screen_ExchangeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Screen_ExchangeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A84F0A980E3367A908F877DE /* Pods_Screen_Exchange.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Screen_Exchange.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C29127107C0B43160C32A49A /* Pods-Screen-Exchange-Screen-ExchangeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Screen-Exchange-Screen-ExchangeUITests.debug.xcconfig"; path = "Target Support Files/Pods-Screen-Exchange-Screen-ExchangeUITests/Pods-Screen-Exchange-Screen-ExchangeUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,7 +145,6 @@
 			children = (
 				A1CF8D132800DEC500CF1706 /* Delegates */,
 				A1CF8D122800DEB500CF1706 /* Storyboards */,
-				A1CF8D102800DEA600CF1706 /* Extensions */,
 				A1CF8D0E2800DE8C00CF1706 /* Networking */,
 				A1CF8D0D2800DE8700CF1706 /* Views */,
 				A1CF8D0C2800DE7D00CF1706 /* Models */,
@@ -166,7 +175,10 @@
 		A1CF8D0B2800DE6D00CF1706 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A10E9B8A2803AB6900732063 /* PrimaryCurrencyPickerController.swift */,
+				A10E9B8C2803AB8900732063 /* SecondaryCurrencyPickerController.swift */,
 				A1CF8CDF2800DD4500CF1706 /* ExchangeController.swift */,
+				A10E9B942803AC9700732063 /* SettingsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -175,7 +187,6 @@
 			isa = PBXGroup;
 			children = (
 				A1CF8D142800F8BC00CF1706 /* SpeechService.swift */,
-				A1CF8D18280282BA00CF1706 /* SynthesizerService.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -205,6 +216,9 @@
 			isa = PBXGroup;
 			children = (
 				A1CF8CE12800DD4500CF1706 /* Main.storyboard */,
+				A10E9B8E2803ABFE00732063 /* PrimaryCurrencyPicker.storyboard */,
+				A10E9B902803AC1600732063 /* SecondaryCurrencyPicker.storyboard */,
+				A10E9B922803AC3400732063 /* Settings.storyboard */,
 				A1CF8CE62800DD4800CF1706 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -213,6 +227,7 @@
 		A1CF8D132800DEC500CF1706 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
+				A1CF8D102800DEA600CF1706 /* Extensions */,
 				A1CF8CDB2800DD4500CF1706 /* AppDelegate.swift */,
 				A1CF8CDD2800DD4500CF1706 /* SceneDelegate.swift */,
 			);
@@ -336,7 +351,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A10E9B8F2803ABFE00732063 /* PrimaryCurrencyPicker.storyboard in Resources */,
 				A1CF8CE82800DD4800CF1706 /* LaunchScreen.storyboard in Resources */,
+				A10E9B912803AC1600732063 /* SecondaryCurrencyPicker.storyboard in Resources */,
+				A10E9B932803AC3400732063 /* Settings.storyboard in Resources */,
 				A1CF8CE52800DD4800CF1706 /* Assets.xcassets in Resources */,
 				A1CF8CE32800DD4500CF1706 /* Main.storyboard in Resources */,
 			);
@@ -432,11 +450,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1CF8D19280282BA00CF1706 /* SynthesizerService.swift in Sources */,
 				A1CF8CE02800DD4500CF1706 /* ExchangeController.swift in Sources */,
 				A1CF8CDC2800DD4500CF1706 /* AppDelegate.swift in Sources */,
 				A1CF8CDE2800DD4500CF1706 /* SceneDelegate.swift in Sources */,
+				A10E9B952803AC9700732063 /* SettingsController.swift in Sources */,
 				A1CF8D152800F8BC00CF1706 /* SpeechService.swift in Sources */,
+				A10E9B8B2803AB6A00732063 /* PrimaryCurrencyPickerController.swift in Sources */,
+				A10E9B8D2803AB8900732063 /* SecondaryCurrencyPickerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,6 +634,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A887Z3D2HC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Screen-Exchange/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -642,6 +663,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A887Z3D2HC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Screen-Exchange/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
