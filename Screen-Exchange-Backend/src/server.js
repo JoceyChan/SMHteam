@@ -30,7 +30,7 @@ async function getAudioByteStream(text, langCode, voiceGender) {
         voice: {languageCode: langCode, ssmlGender: voiceGender},
 
         // Select the type of audio encoding
-        audioConfig: {audioEncoding: 'MP3'},
+        audioConfig: {audioEncoding: 'LINEAR16'},
     };
 
     // Performs the Text-to-Speech request
@@ -43,7 +43,7 @@ async function getAudioByteStream(text, langCode, voiceGender) {
  * @param {string} text
  * @return {json} audio
  */
-app.get("/api/text-to-speech", (req, res) => {
+app.post("/api/text-to-speech", (req, res) => {
     const text = req.body.text;
     const languageCode = req.body.language;
     const ssmlGender = req.body.gender;
