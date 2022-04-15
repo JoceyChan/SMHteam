@@ -15,16 +15,41 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqW-9C-Ugi">
+                                <rect key="frame" x="108" y="520" width="199" height="47"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Exchange">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="40" name="ArialRoundedMTBold"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Alternate app-icon" translatesAutoresizingMaskIntoConstraints="NO" id="FbH-0l-kwe" userLabel="app-icon">
+                                <rect key="frame" x="63" y="304" width="288" height="288"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fqW-9C-Ugi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="108" id="3WX-2w-rQV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fqW-9C-Ugi" secondAttribute="trailing" constant="107" id="Ic0-q0-QhX"/>
+                            <constraint firstItem="FbH-0l-kwe" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="OaM-d5-nHy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fqW-9C-Ugi" secondAttribute="bottom" constant="295" id="Wbn-RA-2F6"/>
+                            <constraint firstItem="FbH-0l-kwe" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="jgw-Dq-PRX"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Alternate app-icon" width="288" height="288"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
