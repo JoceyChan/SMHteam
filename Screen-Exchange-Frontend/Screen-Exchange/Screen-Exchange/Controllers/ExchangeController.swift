@@ -30,13 +30,7 @@ class ExchangeController: UIViewController {
         speak(with: primaryCurrencyTextField.text ?? "")
     }
     
-    @IBAction func updatePrimaryCurrency(_ sender: Any) {
-        primaryAmount = primaryAmount + 1
-        primaryCurrencyTextField.text = "$\(primaryAmount!) CAD"
-        
-        
-        
-    }
+    
     
     
     func speak(with text:String){
