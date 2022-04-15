@@ -28,18 +28,18 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Alternate app-icon" translatesAutoresizingMaskIntoConstraints="NO" id="FbH-0l-kwe" userLabel="app-icon">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="AppIcon" translatesAutoresizingMaskIntoConstraints="NO" id="7DL-Ac-NbH">
                                 <rect key="frame" x="63" y="304" width="288" height="288"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="7DL-Ac-NbH" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="0ZR-WC-HjV"/>
+                            <constraint firstItem="7DL-Ac-NbH" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="0oC-DP-Iis"/>
                             <constraint firstItem="fqW-9C-Ugi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="108" id="3WX-2w-rQV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fqW-9C-Ugi" secondAttribute="trailing" constant="107" id="Ic0-q0-QhX"/>
-                            <constraint firstItem="FbH-0l-kwe" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="OaM-d5-nHy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fqW-9C-Ugi" secondAttribute="bottom" constant="295" id="Wbn-RA-2F6"/>
-                            <constraint firstItem="FbH-0l-kwe" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="jgw-Dq-PRX"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -49,7 +49,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Alternate app-icon" width="288" height="288"/>
+        <image name="AppIcon" width="288" height="288"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
