@@ -17,7 +17,7 @@ class SpeechServiceTests: XCTestCase {
     }
     
     override func tearDown() {
-        service = SpeechService()
+        service = nil
         super.tearDown()
     }
     
