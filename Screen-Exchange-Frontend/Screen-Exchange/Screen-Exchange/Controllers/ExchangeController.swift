@@ -8,6 +8,7 @@
 import UIKit
 import AVFoundation
 import AVKit
+import Money
 
 class ExchangeController: UIViewController {
     @IBOutlet weak var exchangeRateLabel: UILabel!
@@ -19,17 +20,21 @@ class ExchangeController: UIViewController {
     
   
     
-    var primaryAmount: Float!
-    var secondaryAmount: Float!
-    
+    var primaryAmount: Decimal!
+    var secondaryAmount: Decimal!
     var primaryCurrencyType: String!
     var secondaryCurrencyType: String!
+    var exchangeRate: Decimal!
     
     var primaryCurrencyText: String? {
         didSet {
-            print(self.primaryAmount.currencyRepresentation)
+           
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                UIAccessibility.post(notification: .announcement, argument: "\(String(describing: self.primaryAmount?.currencyRepresentation) ) \(self.primaryCurrencyType!)")
+                guard !(self.primaryCurrencyText?.isEmpty ?? "".isEmpty) else {
+                    UIAccessibility.post(notification: .announcement, argument: "\(self.primaryCurrencyType!) to \(self.secondaryCurrencyType!)" )
+                    return
+                }
+                UIAccessibility.post(notification: .announcement, argument: "\(String(describing: self.primaryCurrencyText!.toCurrency())) \(self.primaryCurrencyType!) is \(String(describing: self.secondaryCurrencyTextField.text?.toCurrency() ?? "")) \(self.secondaryCurrencyType!)")
             }
             
         }
@@ -41,12 +46,15 @@ class ExchangeController: UIViewController {
         super.viewDidLoad()
         primaryAmount = 0.0
         secondaryAmount = 0.0
+        exchangeRate = 1.26
         
         primaryCurrencyType = "USD"
         secondaryCurrencyType = "CAD"
         
+        
         primaryCurrencyText = ""
         
+        exchangeRateLabel.text = "\(primaryCurrencyType!) to \(secondaryCurrencyType!)"
       
         primaryCurrencyLabel.text = "\(String(describing: primaryCurrencyType!))"
         secondaryCurrencyLabel.text = "\(String(describing: secondaryCurrencyType!))"
@@ -75,80 +83,74 @@ class ExchangeController: UIViewController {
     }
    
     private func updatePrimaryAmount(with string: String){
-        primaryAmount = Float(string) ?? primaryAmount
+        primaryAmount = Decimal(string: string) ?? primaryAmount
     }
     
     private func updateSecondaryAmount(with string: String){
-        secondaryAmount = Float(string) ?? primaryAmount
+        secondaryAmount = Decimal(string: string) ?? primaryAmount
     }
     
-    private func updateConversions(){
-        
+    private func updateConversions(with userInput: String){
+    
+        primaryAmount = Decimal(string: userInput)
+        primaryCurrencyTextField.text! = userInput
+        //calculate conversion and update secondary text
+        secondaryAmount = primaryAmount * exchangeRate
+        secondaryCurrencyTextField.text! = "\(secondaryAmount!)"
     }
     
     //MARK: Key Pressed
     
     @IBAction func onButtonOneTouch(_ sender: Any) {
         primaryCurrencyText! += "1"
-        primaryAmount = Float(primaryCurrencyText!)
-        primaryCurrencyTextField.text! = primaryAmount.currencyRepresentation
+        updateConversions(with: primaryCurrencyText ?? "0.0")
         
     }
     @IBAction func onButtonTwoTouch(_ sender: Any) {
         primaryCurrencyText! += "2"
-        primaryAmount = Float(primaryCurrencyText!)
-        primaryCurrencyTextField.text! = primaryAmount.currencyRepresentation
+        updateConversions(with: primaryCurrencyText ?? "0.0")
     }
     
     @IBAction func onButtonThreeTouch(_ sender: Any) {
         primaryCurrencyText! += "3"
-        primaryAmount = Float(primaryCurrencyText!)
-        primaryCurrencyTextField.text! = primaryAmount.currencyRepresentation
+        updateConversions(with: primaryCurrencyText ?? "0.0")
     }
     
     @IBAction func onButtonFourTouch(_ sender: Any) {
         primaryCurrencyText! += "4"
-        primaryAmount = Float(primaryCurrencyText!)
-        primaryCurrencyTextField.text! = primaryAmount.currencyRepresentation
+        updateConversions(with: primaryCurrencyText ?? "0.0")
     }
     @IBAction func onButtonFiveTouch(_ sender: Any) {
         primaryCurrencyText! += "5"
-        primaryAmount = Float(primaryCurrencyText!)
-        primaryCurrencyTextField.text! = primaryAmount.currencyRepresentation
+        updateConversions(with: primaryCurrencyText ?? "0.0")
     }
     @IBAction func onButtonSixTouch(_ sender: Any) {
         primaryCurrencyText! += "6"
-        primaryCurrencyTextField.text! = primaryAmount.currencyRepresentation
+        updateConversions(with: primaryCurrencyText ?? "0.0")
     }
     @IBAction func onButtonSevenTouch(_ sender: Any) {
         primaryCurrencyText! += "7"
-        primaryAmount = Float(primaryCurrencyText!)
-        primaryCurrencyTextField.text! = primaryAmount.currencyRepresentation
+        updateConversions(with: primaryCurrencyText ?? "0.0")
     }
     @IBAction func onButtonEightTouch(_ sender: Any) {
         primaryCurrencyText! += "8"
-        primaryAmount = Float(primaryCurrencyText!)
-        primaryCurrencyTextField.text! = primaryAmount.currencyRepresentation
+        updateConversions(with: primaryCurrencyText ?? "0.0")
     }
     @IBAction func onButtonNineTouch(_ sender: Any) {
         primaryCurrencyText! += "9"
-        primaryAmount = Float(primaryCurrencyText!)
-        primaryCurrencyTextField.text! = primaryAmount.currencyRepresentation
+        updateConversions(with: primaryCurrencyText ?? "0.0")
     }
     @IBAction func onButtonPeriodTouch(_ sender: Any) {
         primaryCurrencyText! += "."
-        primaryAmount = Float(primaryCurrencyText!)
-        primaryCurrencyTextField.text! = primaryAmount.currencyRepresentation
+        updateConversions(with: primaryCurrencyText ?? "0.0")
     }
     @IBAction func onButtonZeroTouch(_ sender: Any) {
         primaryCurrencyText! += "0"
-        primaryAmount = Float(primaryCurrencyText!)
-        primaryCurrencyTextField.text! = primaryAmount.currencyRepresentation
+        updateConversions(with: primaryCurrencyText ?? "0.0")
     }
     @IBAction func onDeleteButtonTouch(_ sender: Any) {
         primaryCurrencyText! = String(primaryCurrencyText!.dropLast())
-        primaryAmount = Float(primaryCurrencyText!)
-        primaryCurrencyTextField.text! = primaryAmount.currencyRepresentation
+        updateConversions(with: primaryCurrencyText ?? "0.0")
         
     }
     
