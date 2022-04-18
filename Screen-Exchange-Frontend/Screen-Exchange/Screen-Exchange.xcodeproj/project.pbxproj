@@ -14,7 +14,7 @@
 		A10E9B912803AC1600732063 /* SecondaryCurrencyPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A10E9B902803AC1600732063 /* SecondaryCurrencyPicker.storyboard */; };
 		A10E9B932803AC3400732063 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A10E9B922803AC3400732063 /* Settings.storyboard */; };
 		A10E9B952803AC9700732063 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10E9B942803AC9700732063 /* SettingsController.swift */; };
-		A11C23F62809557500CD506A /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11C23F52809557500CD506A /* Int+Extensions.swift */; };
+		A11C23F62809557500CD506A /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11C23F52809557500CD506A /* String+Extensions.swift */; };
 		A190793F280B83B5009C79D4 /* ExchangeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A190793E280B83B4009C79D4 /* ExchangeService.swift */; };
 		A1907941280B8641009C79D4 /* ExchangeServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1907940280B8641009C79D4 /* ExchangeServiceTests.swift */; };
 		A1CF8CDC2800DD4500CF1706 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CF8CDB2800DD4500CF1706 /* AppDelegate.swift */; };
@@ -59,7 +59,7 @@
 		A10E9B902803AC1600732063 /* SecondaryCurrencyPicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondaryCurrencyPicker.storyboard; sourceTree = "<group>"; };
 		A10E9B922803AC3400732063 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		A10E9B942803AC9700732063 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
-		A11C23F52809557500CD506A /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		A11C23F52809557500CD506A /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		A190793E280B83B4009C79D4 /* ExchangeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeService.swift; sourceTree = "<group>"; };
 		A1907940280B8641009C79D4 /* ExchangeServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeServiceTests.swift; sourceTree = "<group>"; };
 		A1CF8CD82800DD4500CF1706 /* Screen-Exchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Screen-Exchange.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,7 +216,7 @@
 		A1CF8D102800DEA600CF1706 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A11C23F52809557500CD506A /* Int+Extensions.swift */,
+				A11C23F52809557500CD506A /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -465,7 +465,7 @@
 				A1CF8CDE2800DD4500CF1706 /* SceneDelegate.swift in Sources */,
 				A10E9B952803AC9700732063 /* SettingsController.swift in Sources */,
 				A1CF8D152800F8BC00CF1706 /* SpeechService.swift in Sources */,
-				A11C23F62809557500CD506A /* Int+Extensions.swift in Sources */,
+				A11C23F62809557500CD506A /* String+Extensions.swift in Sources */,
 				A10E9B8B2803AB6A00732063 /* PrimaryCurrencyPickerController.swift in Sources */,
 				A10E9B8D2803AB8900732063 /* SecondaryCurrencyPickerController.swift in Sources */,
 			);

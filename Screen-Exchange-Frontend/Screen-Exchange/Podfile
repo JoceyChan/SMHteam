@@ -6,6 +6,7 @@ target 'Screen-Exchange' do
   use_frameworks!
 
   # Pods for Screen-Exchange
+  pod 'Money-FlightSchool', '~> 1.3.0'
 
   target 'Screen-ExchangeTests' do
     inherit! :search_paths

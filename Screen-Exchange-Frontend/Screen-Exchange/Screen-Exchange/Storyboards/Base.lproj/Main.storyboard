@@ -29,25 +29,29 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bu0-mW-raA">
                                         <rect key="frame" x="20" y="40.5" width="374" height="130"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="EYS-zH-mfG">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="EYS-zH-mfG">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="130"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0.0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bhb-QK-1X6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="271" height="130"/>
-                                                        <nil key="textColor"/>
+                                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0.0" textAlignment="right" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bhb-QK-1X6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="269" height="130"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
                                                             <action selector="onPrimaryCurrencyChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="it5-4l-xjJ"/>
                                                         </connections>
                                                     </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="USD" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g68-YF-ABQ">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="754" verticalCompressionResistancePriority="752" text="USD" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g68-YF-ABQ">
                                                         <rect key="frame" x="284" y="0.0" width="90" height="130"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="Bhb-QK-1X6" firstAttribute="top" secondItem="EYS-zH-mfG" secondAttribute="top" id="GZo-5u-vgM"/>
+                                                    <constraint firstItem="Bhb-QK-1X6" firstAttribute="leading" secondItem="EYS-zH-mfG" secondAttribute="leading" id="neD-f6-A7k"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Bhb-QK-1X6" secondAttribute="bottom" id="sGj-UG-BIB"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -66,21 +70,26 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R3Q-K8-Pvo">
                                         <rect key="frame" x="20" y="195.5" width="374" height="130"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="biW-Tw-QVU">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="biW-Tw-QVU">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="130"/>
                                                 <subviews>
                                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0.0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gza-oE-OJN">
-                                                        <rect key="frame" x="0.0" y="0.0" width="271" height="130"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="269" height="130"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbB-YT-wW5">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="754" text="USD" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbB-YT-wW5">
                                                         <rect key="frame" x="284" y="0.0" width="90" height="130"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="Gza-oE-OJN" secondAttribute="bottom" id="2KL-qs-O1C"/>
+                                                    <constraint firstItem="Gza-oE-OJN" firstAttribute="leading" secondItem="biW-Tw-QVU" secondAttribute="leading" id="IgP-LN-Uhy"/>
+                                                    <constraint firstItem="Gza-oE-OJN" firstAttribute="top" secondItem="biW-Tw-QVU" secondAttribute="top" id="RrK-NM-3iJ"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -293,7 +302,6 @@
                                                     </attributedString>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="onButtonFourTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h93-J6-ETM"/>
                                                     <action selector="onButtonSevenTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8C0-F5-H5I"/>
                                                 </connections>
                                             </button>
@@ -320,7 +328,6 @@
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="onButtonEightTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y1p-qD-UUO"/>
-                                                    <action selector="onButtonFiveTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RDB-ZK-Swt"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9PI-c6-q4o">
@@ -343,7 +350,6 @@
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="onButtonNineTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h7h-j7-s0n"/>
-                                                    <action selector="onButtonSixTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JDX-wB-MEN"/>
                                                 </connections>
                                             </button>
                                         </subviews>
