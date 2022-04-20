@@ -1,0 +1,20 @@
+PODS:
+  - PMSuperButton (3.0.2)
+  - ValueCoding (3.0.0)
+
+DEPENDENCIES:
+  - PMSuperButton
+  - ValueCoding
+
+SPEC REPOS:
+  trunk:
+    - PMSuperButton
+    - ValueCoding
+
+SPEC CHECKSUMS:
+  PMSuperButton: 72105fef415890c8792a9e5a784f75c461066f8b
+  ValueCoding: b094fc6c260d6abad7ea0848344a6dd78a1269a4
+
+PODFILE CHECKSUM: b1a7f57a0b15d90691e81d4e1a0e97227b6eba19
+
+COCOAPODS: 1.11.3
