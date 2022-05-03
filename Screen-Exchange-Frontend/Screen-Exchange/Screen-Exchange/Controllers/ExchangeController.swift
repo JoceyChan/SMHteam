@@ -11,6 +11,8 @@ import AVKit
 import Money
 
 class ExchangeController: UIViewController {
+    @IBOutlet weak var PrimaryCurrencyView: UIView!
+    @IBOutlet weak var SecondaryCurrencyView: UIView!
     @IBOutlet weak var exchangeRateLabel: UILabel!
     @IBOutlet weak var primaryCurrencyLabel: UILabel!
     @IBOutlet weak var primaryCurrencyTextField: UITextField!
@@ -25,6 +27,15 @@ class ExchangeController: UIViewController {
     var primaryCurrencyType: String!
     var secondaryCurrencyType: String!
     var exchangeRate: Decimal!
+    
+    var speechRecognizer: SpeechRecognizer!
+    var isRecording: Bool! {
+        didSet{
+            if(isRecording){
+                
+            }
+        }
+    }
     
     var primaryCurrencyText: String? {
         didSet {
@@ -44,6 +55,8 @@ class ExchangeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUI()
+        speechRecognizer = SpeechRecognizer()
         primaryAmount = 0.0
         secondaryAmount = 0.0
         exchangeRate = 1.26
@@ -82,6 +95,11 @@ class ExchangeController: UIViewController {
         synth.speak(utterance)
     }
    
+    private func setUI(){
+        
+        SecondaryCurrencyView.layer.cornerRadius = 10
+        PrimaryCurrencyView.layer.cornerRadius = 10
+    }
     private func updatePrimaryAmount(with string: String){
         primaryAmount = Decimal(string: string) ?? primaryAmount
     }
@@ -91,68 +109,22 @@ class ExchangeController: UIViewController {
     }
     
     private func updateConversions(with userInput: String){
-    
-        primaryAmount = Decimal(string: userInput)
+        if userInput.isEmpty {
+            primaryAmount = 0.0
+        } else {
+            primaryAmount = Decimal(string: userInput)
+        }
         primaryCurrencyTextField.text! = userInput
         //calculate conversion and update secondary text
         secondaryAmount = primaryAmount * exchangeRate
-        secondaryCurrencyTextField.text! = "\(secondaryAmount!)"
+        secondaryCurrencyTextField.text! = "\(secondaryAmount!)".toCurrency()
     }
     
     //MARK: Key Pressed
-    
-    @IBAction func onButtonOneTouch(_ sender: Any) {
-        primaryCurrencyText! += "1"
-        updateConversions(with: primaryCurrencyText ?? "0.0")
+    @IBAction func onSpeakIn(_ sender: Any) {
+        speechRecognizer.reset()
+        speechRecognizer.transcribe()
         
-    }
-    @IBAction func onButtonTwoTouch(_ sender: Any) {
-        primaryCurrencyText! += "2"
-        updateConversions(with: primaryCurrencyText ?? "0.0")
-    }
-    
-    @IBAction func onButtonThreeTouch(_ sender: Any) {
-        primaryCurrencyText! += "3"
-        updateConversions(with: primaryCurrencyText ?? "0.0")
-    }
-    
-    @IBAction func onButtonFourTouch(_ sender: Any) {
-        primaryCurrencyText! += "4"
-        updateConversions(with: primaryCurrencyText ?? "0.0")
-    }
-    @IBAction func onButtonFiveTouch(_ sender: Any) {
-        primaryCurrencyText! += "5"
-        updateConversions(with: primaryCurrencyText ?? "0.0")
-    }
-    @IBAction func onButtonSixTouch(_ sender: Any) {
-        primaryCurrencyText! += "6"
-        updateConversions(with: primaryCurrencyText ?? "0.0")
-    }
-    @IBAction func onButtonSevenTouch(_ sender: Any) {
-        primaryCurrencyText! += "7"
-        updateConversions(with: primaryCurrencyText ?? "0.0")
-    }
-    @IBAction func onButtonEightTouch(_ sender: Any) {
-        primaryCurrencyText! += "8"
-        updateConversions(with: primaryCurrencyText ?? "0.0")
-    }
-    @IBAction func onButtonNineTouch(_ sender: Any) {
-        primaryCurrencyText! += "9"
-        updateConversions(with: primaryCurrencyText ?? "0.0")
-    }
-    @IBAction func onButtonPeriodTouch(_ sender: Any) {
-        primaryCurrencyText! += "."
-        updateConversions(with: primaryCurrencyText ?? "0.0")
-    }
-    @IBAction func onButtonZeroTouch(_ sender: Any) {
-        primaryCurrencyText! += "0"
-        updateConversions(with: primaryCurrencyText ?? "0.0")
-    }
-    @IBAction func onDeleteButtonTouch(_ sender: Any) {
-        primaryCurrencyText! = String(primaryCurrencyText!.dropLast())
-        updateConversions(with: primaryCurrencyText ?? "0.0")
-        
-    }
     
 }
 

@@ -16,29 +16,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqW-9C-Ugi">
-                                <rect key="frame" x="108" y="520" width="199" height="47"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="AppIcon" translatesAutoresizingMaskIntoConstraints="NO" id="7DL-Ac-NbH">
+                                <rect key="frame" x="63" y="304" width="288" height="288"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqW-9C-Ugi">
+                                <rect key="frame" x="0.0" y="506" width="414" height="47"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Exchange">
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="40" name="ArialRoundedMTBold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="AppIcon" translatesAutoresizingMaskIntoConstraints="NO" id="7DL-Ac-NbH">
-                                <rect key="frame" x="63" y="304" width="288" height="288"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="7DL-Ac-NbH" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="0ZR-WC-HjV"/>
-                            <constraint firstItem="7DL-Ac-NbH" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="0oC-DP-Iis"/>
-                            <constraint firstItem="fqW-9C-Ugi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="108" id="3WX-2w-rQV"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fqW-9C-Ugi" secondAttribute="trailing" constant="107" id="Ic0-q0-QhX"/>
+                            <constraint firstItem="7DL-Ac-NbH" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="0Hk-Gv-1X1"/>
+                            <constraint firstItem="fqW-9C-Ugi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3WX-2w-rQV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fqW-9C-Ugi" secondAttribute="trailing" id="Ic0-q0-QhX"/>
+                            <constraint firstItem="7DL-Ac-NbH" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="SfO-IJ-tbe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fqW-9C-Ugi" secondAttribute="bottom" constant="295" id="Wbn-RA-2F6"/>
                         </constraints>
                     </view>

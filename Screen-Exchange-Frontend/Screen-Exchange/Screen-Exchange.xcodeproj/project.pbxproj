@@ -15,6 +15,7 @@
 		A10E9B932803AC3400732063 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A10E9B922803AC3400732063 /* Settings.storyboard */; };
 		A10E9B952803AC9700732063 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10E9B942803AC9700732063 /* SettingsController.swift */; };
 		A11C23F62809557500CD506A /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11C23F52809557500CD506A /* String+Extensions.swift */; };
+		A16A87F9280D516100E7E101 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16A87F8280D516100E7E101 /* SpeechRecognizer.swift */; };
 		A190793F280B83B5009C79D4 /* ExchangeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A190793E280B83B4009C79D4 /* ExchangeService.swift */; };
 		A1907941280B8641009C79D4 /* ExchangeServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1907940280B8641009C79D4 /* ExchangeServiceTests.swift */; };
 		A1CF8CDC2800DD4500CF1706 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CF8CDB2800DD4500CF1706 /* AppDelegate.swift */; };
@@ -60,6 +61,7 @@
 		A10E9B922803AC3400732063 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		A10E9B942803AC9700732063 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		A11C23F52809557500CD506A /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		A16A87F8280D516100E7E101 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		A190793E280B83B4009C79D4 /* ExchangeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeService.swift; sourceTree = "<group>"; };
 		A1907940280B8641009C79D4 /* ExchangeServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeServiceTests.swift; sourceTree = "<group>"; };
 		A1CF8CD82800DD4500CF1706 /* Screen-Exchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Screen-Exchange.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				A1CF8D142800F8BC00CF1706 /* SpeechService.swift */,
+				A16A87F8280D516100E7E101 /* SpeechRecognizer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				A190793F280B83B5009C79D4 /* ExchangeService.swift in Sources */,
 				A1CF8CDE2800DD4500CF1706 /* SceneDelegate.swift in Sources */,
 				A10E9B952803AC9700732063 /* SettingsController.swift in Sources */,
+				A16A87F9280D516100E7E101 /* SpeechRecognizer.swift in Sources */,
 				A1CF8D152800F8BC00CF1706 /* SpeechService.swift in Sources */,
 				A11C23F62809557500CD506A /* String+Extensions.swift in Sources */,
 				A10E9B8B2803AB6A00732063 /* PrimaryCurrencyPickerController.swift in Sources */,
@@ -649,6 +653,8 @@
 				DEVELOPMENT_TEAM = A887Z3D2HC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Screen-Exchange/Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to transcribe currency amounts. Audio recordings are discarded after transcription.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can view a text transcript of your spoken currency amounts";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -679,6 +685,8 @@
 				DEVELOPMENT_TEAM = A887Z3D2HC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Screen-Exchange/Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to transcribe currency amounts. Audio recordings are discarded after transcription.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can view a text transcript of your spoken currency amounts";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
