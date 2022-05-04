@@ -7,6 +7,7 @@
 
 import UIKit
 import QuartzCore
+import AVFoundation
 
 class SMHMainViewController: UIViewController {
     
@@ -53,7 +54,9 @@ class SMHMainViewController: UIViewController {
     let containerRadius = CGFloat(8.0)
     
     let presenter = SMHMainPresenter()
-    
+    let speechRecognizer = SMHSpeechRecognizer()
+    var isRecording = false
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +71,13 @@ class SMHMainViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         updateUIBasedOnInterfaceOrientation()
+       
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        speechRecognizer.stopTranscribing()
+        isRecording = false
     }
     
     func setupUI() {
@@ -89,6 +99,15 @@ extension SMHMainViewController {
     }
 }
 
+extension SMHMainViewController {
+    @IBAction func speakInClicked(_ sender: UIButton!){
+        self.performSegue(withIdentifier: "toRecordingSegue", sender: self)
+//        speechRecognizer.reset()
+//        speechRecognizer.transcribe()
+//        isRecording = true
+    }
+}
+
 // MARK: - Update on exchange rate
 extension SMHMainViewController {
     func updatedExchangeRate(fromCode: String, toCode: String, rate: String) {
@@ -107,6 +126,16 @@ extension SMHMainViewController {
     func updateCurrencyEntries(fromCurrency: String, toCurrency: String) {
         self.topCurrencyValueLabel.text = fromCurrency
         self.bottomCurrencyValueLabel.text = toCurrency
+    }
+}
+
+// MARK: - Segues
+extension SMHMainViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "toRecordingSegue"){
+            let vc = segue.destination as! SMHRecordingViewController
+            vc.speechRecognizer = speechRecognizer
+        }
     }
 }
 

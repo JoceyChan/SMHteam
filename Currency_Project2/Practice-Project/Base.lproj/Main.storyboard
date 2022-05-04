@@ -212,8 +212,20 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SBr-G9-nke" userLabel="Center Buttons Stack View">
                                                 <rect key="frame" x="8" y="10.000000000000004" width="412" height="44.333333333333343"/>
                                                 <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="755" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QR8-EI-Bjc">
+                                                        <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="44.333333333333336"/>
+                                                        <color key="tintColor" systemColor="labelColor"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" image="mic.circle.fill" catalog="system" title="Speak Out">
+                                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="baseBackgroundColor" systemColor="systemTealColor"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="speakInClicked:" destination="uVr-1c-wLb" eventType="touchUpInside" id="nRG-4A-Xxm"/>
+                                                        </connections>
+                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="755" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8V-do-8s7">
-                                                        <rect key="frame" x="0.0" y="0.0" width="412" height="44.333333333333336"/>
+                                                        <rect key="frame" x="174.66666666666663" y="0.0" width="237.33333333333337" height="44.333333333333336"/>
                                                         <color key="tintColor" systemColor="labelColor"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="filled" image="arrow.up.arrow.down.circle.fill" catalog="system" title="Change Currency">
@@ -454,11 +466,62 @@
                         <outlet property="topEntriesStackView" destination="aEf-48-Fkw" id="m2N-Co-qTm"/>
                         <outlet property="topFieldContainer" destination="a1P-XA-1kt" id="nCL-Xn-Wiq"/>
                         <outlet property="topFieldHeightConstraint" destination="LAM-eD-nX7" id="5md-IO-4Yu"/>
+                        <segue destination="abh-xT-H2q" kind="popoverPresentation" identifier="toRecordingSegue" popoverAnchorView="QR8-EI-Bjc" id="iEs-Hc-AGx">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                            <popoverPassthroughViews>
+                                <view reference="mbW-Kn-Vlm"/>
+                            </popoverPassthroughViews>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kly-As-Cwz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1882.7102803738317" y="69.97840172786178"/>
+        </scene>
+        <!--Recording View Controller-->
+        <scene sceneID="B3M-l2-XCn">
+            <objects>
+                <viewController id="abh-xT-H2q" customClass="SMHRecordingViewController" customModule="Practice_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nUW-HP-LiL">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mic.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="pLO-4o-suI">
+                                <rect key="frame" x="94" y="373" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFj-2f-0JY">
+                                <rect key="frame" x="56" y="106" width="316" height="162"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Text" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZhH-Cg-ncK">
+                                <rect key="frame" x="56" y="44" width="80" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Otb-ea-f1w">
+                                <rect key="frame" x="174" y="772" width="81" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <imageReference key="image" image="xmark.octagon.fill" catalog="system" symbolScale="large"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ERe-SJ-RvB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="recognizedSpeechLabel" destination="WFj-2f-0JY" id="ZFR-34-aVp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Py-dv-aCN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1882.7102803738317" y="745.78833693304546"/>
         </scene>
         <!--Pick Currency View Controller-->
         <scene sceneID="iuV-9Y-Azi">
@@ -589,6 +652,8 @@
         <image name="arrow.turn.left.down" catalog="system" width="120" height="128"/>
         <image name="arrow.up.arrow.down.circle.fill" catalog="system" width="128" height="121"/>
         <image name="delete.left.fill" catalog="system" width="128" height="104"/>
+        <image name="mic.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="xmark.octagon.fill" catalog="system" width="128" height="112"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
