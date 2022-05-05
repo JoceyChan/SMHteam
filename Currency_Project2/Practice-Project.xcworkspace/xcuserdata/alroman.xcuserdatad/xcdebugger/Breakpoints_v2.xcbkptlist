@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "E0FB9D34-3B55-4A25-9EBD-72466B46551C"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2D260038-59F8-4E38-94AD-4E4D59265BCE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Practice-Project/Models/SMHSpeechRecognizer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "init()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2D260038-59F8-4E38-94AD-4E4D59265BCE - 3b5c507be229269e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Practice_Project.SMHSpeechRecognizer.__allocating_init() -&gt; Practice_Project.SMHSpeechRecognizer"
+                  moduleName = "Practice-Project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alroman/Documents/Projects/SMHteam/Currency_Project2/Practice-Project/Models/SMHSpeechRecognizer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "2D260038-59F8-4E38-94AD-4E4D59265BCE - f1c068f0ce2a0851"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Practice_Project.SMHSpeechRecognizer.init() -&gt; Practice_Project.SMHSpeechRecognizer"
+                  moduleName = "Practice-Project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alroman/Documents/Projects/SMHteam/Currency_Project2/Practice-Project/Models/SMHSpeechRecognizer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "112">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8A3B48D0-D68B-4489-9C0E-2C0C1CE1FD12"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Practice-Project/Presenters/SMHMainPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "SMHMainPresenter"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

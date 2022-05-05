@@ -18,6 +18,7 @@ class SMHPickCurrencyViewController: UIViewController {
     @IBOutlet var topPickerView: UIPickerView!
     
     let presenter = SMHPickerPresenter()
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,8 @@ class SMHPickCurrencyViewController: UIViewController {
         UIView.animate(withDuration: 0.5) { [weak self] in
             self?.updateUIBasedOnInterfaceOrientation()
         }
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

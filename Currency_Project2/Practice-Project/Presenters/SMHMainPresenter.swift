@@ -77,5 +77,19 @@ class SMHMainPresenter {
         
         vc.updateCurrencyEntries(fromCurrency: fromCurrencyString, toCurrency: toCurrencyString)
     }
+    
+    func setFromCurrency(amount: Double){
+        guard let vc = view else {
+            return
+        }
+        
+        currencyManager.fromCurrency.money.setRepresentationWith(number: amount)
+        let fromCurrencyString = currencyManager.fromCurrency.money.getStringValue()
+       
+        currencyManager.updateCurrencyValues()
+        let toCurrencyString = currencyManager.toCurrency.money.getTrimmedStringValue()
+        vc.updateCurrencyEntries(fromCurrency: fromCurrencyString, toCurrency: toCurrencyString)
+        
+    }
 }
 

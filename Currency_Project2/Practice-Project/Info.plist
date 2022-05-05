@@ -21,5 +21,11 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Please allow access so we can record your voice</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Please allow access to speech recognition so we can recognize spoken currencies</string>
+	<key></key>
+	<string></string>
 </dict>
 </plist>

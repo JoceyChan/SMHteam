@@ -7,8 +7,9 @@
 
 import UIKit
 import QuartzCore
+import AVFoundation
 
-class SMHMainViewController: UIViewController {
+class SMHMainViewController: UIViewController, RecordingCapturedDelegate {
     
     // MARK: - Constraint Related Outlets and Properties
     @IBOutlet var mainStackView: UIStackView!
@@ -53,7 +54,9 @@ class SMHMainViewController: UIViewController {
     let containerRadius = CGFloat(8.0)
     
     let presenter = SMHMainPresenter()
-    
+    let speechRecognizer = SMHSpeechRecognizer()
+    var isRecording = false
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +71,13 @@ class SMHMainViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         updateUIBasedOnInterfaceOrientation()
+       
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        speechRecognizer.stopTranscribing()
+        isRecording = false
     }
     
     func setupUI() {
@@ -86,6 +96,15 @@ extension SMHMainViewController {
         } else if sender.tag == Constants.mainControllerDeleteKeyTag {
             presenter.handleButtonEvent(title: Constants.deleteKeyTitle)
         }
+    }
+}
+
+extension SMHMainViewController {
+    @IBAction func speakInClicked(_ sender: UIButton!){
+        self.performSegue(withIdentifier: "toRecordingSegue", sender: self)
+//        speechRecognizer.reset()
+//        speechRecognizer.transcribe()
+//        isRecording = true
     }
 }
 
@@ -110,6 +129,25 @@ extension SMHMainViewController {
     }
 }
 
+// MARK: - Segues
+extension SMHMainViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "toRecordingSegue"){
+            let vc = segue.destination as! SMHRecordingViewController
+            vc.delegate = self
+            vc.speechRecognizer = speechRecognizer
+        }
+    }
+}
+
+// MARK: - Delegates
+extension SMHMainViewController {
+     func recordingCaptured(money: Double) {
+         presenter.resetCurrencies()
+         presenter.setFromCurrency(amount: money)
+         
+    }
+}
 
 // MARK: - Beautify UI
 extension SMHMainViewController {
