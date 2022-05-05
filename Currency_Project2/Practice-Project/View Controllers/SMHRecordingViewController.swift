@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol RecordingCapturedDelegate {
+    func recordingCaptured(message: String)
+}
+
 class SMHRecordingViewController: UIViewController, SpeechRecognizerTranscriptDelegate{
     @IBOutlet weak var recognizedSpeechLabel: UILabel!
     
@@ -16,9 +20,12 @@ class SMHRecordingViewController: UIViewController, SpeechRecognizerTranscriptDe
     
     var speechRecognizer: SMHSpeechRecognizer?
     var isRecording: Bool!
+    var delegate: RecordingCapturedDelegate? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         speechRecognizer?.delegate = self
+        
         // Do any additional setup after loading the view.
     }
     
@@ -35,6 +42,13 @@ class SMHRecordingViewController: UIViewController, SpeechRecognizerTranscriptDe
         speechRecognizer?.reset()
         isRecording = false
     }
+    
+    @IBAction func exitClicked(_ sender: Any) {
+        delegate?.recordingCaptured(message: recognizedSpeechLabel.text ?? "")
+        self.dismiss(animated: true)
+    }
+    @IBOutlet weak var micButtonClicked: UIImageView!
+    
     
 
     /*

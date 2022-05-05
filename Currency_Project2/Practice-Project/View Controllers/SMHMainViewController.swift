@@ -9,7 +9,7 @@ import UIKit
 import QuartzCore
 import AVFoundation
 
-class SMHMainViewController: UIViewController {
+class SMHMainViewController: UIViewController, RecordingCapturedDelegate {
     
     // MARK: - Constraint Related Outlets and Properties
     @IBOutlet var mainStackView: UIStackView!
@@ -134,11 +134,18 @@ extension SMHMainViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "toRecordingSegue"){
             let vc = segue.destination as! SMHRecordingViewController
+            vc.delegate = self
             vc.speechRecognizer = speechRecognizer
         }
     }
 }
 
+// MARK: - Delegates
+extension SMHMainViewController {
+     func recordingCaptured(message: String) {
+        
+    }
+}
 
 // MARK: - Beautify UI
 extension SMHMainViewController {

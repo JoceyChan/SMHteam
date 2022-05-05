@@ -505,17 +505,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Otb-ea-f1w">
-                                <rect key="frame" x="174" y="772" width="81" height="54"/>
+                                <rect key="frame" x="115" y="581" width="198" height="178"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <buttonConfiguration key="configuration" style="filled">
                                     <imageReference key="image" image="xmark.octagon.fill" catalog="system" symbolScale="large"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="exitClicked:" destination="abh-xT-H2q" eventType="touchUpInside" id="0sP-Zq-FxF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ERe-SJ-RvB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="micButtonClicked" destination="pLO-4o-suI" id="pDs-us-ifu"/>
                         <outlet property="recognizedSpeechLabel" destination="WFj-2f-0JY" id="ZFR-34-aVp"/>
                     </connections>
                 </viewController>
