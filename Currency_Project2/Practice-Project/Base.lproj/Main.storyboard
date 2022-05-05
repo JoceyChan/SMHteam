@@ -486,27 +486,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mic.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="pLO-4o-suI">
-                                <rect key="frame" x="94" y="373" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFj-2f-0JY">
-                                <rect key="frame" x="56" y="106" width="316" height="162"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFj-2f-0JY">
+                                <rect key="frame" x="20" y="130" width="352" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Sou-DB-aJj"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Text" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZhH-Cg-ncK">
-                                <rect key="frame" x="56" y="44" width="80" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speak in Currency" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZhH-Cg-ncK">
+                                <rect key="frame" x="56" y="69" width="322" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Otb-ea-f1w">
-                                <rect key="frame" x="115" y="581" width="198" height="178"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Otb-ea-f1w">
+                                <rect key="frame" x="25" y="743.33333333333337" width="378" height="32"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                                 <buttonConfiguration key="configuration" style="filled">
                                     <imageReference key="image" image="xmark.octagon.fill" catalog="system" symbolScale="large"/>
                                 </buttonConfiguration>
@@ -514,12 +511,38 @@
                                     <action selector="exitClicked:" destination="abh-xT-H2q" eventType="touchUpInside" id="0sP-Zq-FxF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAv-Oj-TZu">
+                                <rect key="frame" x="164" y="330" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="5Cm-yB-DKm"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Hr9-Cm-xte"/>
+                                </constraints>
+                                <color key="tintColor" red="0.1647058824" green="0.61568627450000002" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="mic.circle.fill" catalog="system" cornerStyle="capsule">
+                                    <backgroundConfiguration key="background"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ERe-SJ-RvB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WFj-2f-0JY" firstAttribute="top" secondItem="ZhH-Cg-ncK" secondAttribute="bottom" constant="20" id="5h8-P9-22t"/>
+                            <constraint firstItem="ERe-SJ-RvB" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Otb-ea-f1w" secondAttribute="bottom" constant="20" id="97E-5G-nsM"/>
+                            <constraint firstItem="FAv-Oj-TZu" firstAttribute="centerX" secondItem="nUW-HP-LiL" secondAttribute="centerX" id="HHf-mO-zme"/>
+                            <constraint firstAttribute="trailing" secondItem="WFj-2f-0JY" secondAttribute="trailing" constant="56" id="IlO-U2-K2e"/>
+                            <constraint firstItem="ZhH-Cg-ncK" firstAttribute="leading" secondItem="ERe-SJ-RvB" secondAttribute="leading" constant="56" id="KGE-YR-AJv"/>
+                            <constraint firstItem="ZhH-Cg-ncK" firstAttribute="top" secondItem="ERe-SJ-RvB" secondAttribute="top" constant="25" id="PdB-01-Nd1"/>
+                            <constraint firstItem="FAv-Oj-TZu" firstAttribute="top" secondItem="WFj-2f-0JY" secondAttribute="bottom" constant="50" id="aFh-HS-svJ"/>
+                            <constraint firstItem="Otb-ea-f1w" firstAttribute="top" secondItem="FAv-Oj-TZu" secondAttribute="bottom" constant="313.32999999999998" id="dhj-yF-jxI"/>
+                            <constraint firstItem="Otb-ea-f1w" firstAttribute="leading" secondItem="ERe-SJ-RvB" secondAttribute="leading" constant="25" id="oRT-Sz-A0n"/>
+                            <constraint firstItem="ERe-SJ-RvB" firstAttribute="trailing" secondItem="ZhH-Cg-ncK" secondAttribute="trailing" constant="50" id="ojh-2k-C21"/>
+                            <constraint firstItem="WFj-2f-0JY" firstAttribute="leading" secondItem="nUW-HP-LiL" secondAttribute="leading" constant="20" symbolic="YES" id="p2A-Bc-knu"/>
+                            <constraint firstItem="ERe-SJ-RvB" firstAttribute="trailing" secondItem="Otb-ea-f1w" secondAttribute="trailing" constant="25" id="ryg-Wf-fRl"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="micButtonClicked" destination="pLO-4o-suI" id="pDs-us-ifu"/>
+                        <outlet property="micButton" destination="FAv-Oj-TZu" id="7Zs-Z4-KSG"/>
                         <outlet property="recognizedSpeechLabel" destination="WFj-2f-0JY" id="ZFR-34-aVp"/>
                     </connections>
                 </viewController>

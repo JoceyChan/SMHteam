@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A17E07452821D9140047B8E6 /* SMHSpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E07442821D9140047B8E6 /* SMHSpeechRecognizer.swift */; };
 		A17E07472821F1830047B8E6 /* SMHRecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E07462821F1830047B8E6 /* SMHRecordingViewController.swift */; };
+		A17E0749282367870047B8E6 /* SMHAudioAnimationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E0748282367870047B8E6 /* SMHAudioAnimationPresenter.swift */; };
+		A17E074B2823D60D0047B8E6 /* SMHAudioSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E074A2823D60D0047B8E6 /* SMHAudioSessionManager.swift */; };
 		A9407EA12808629F007D12D3 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9407EA02808629F007D12D3 /* UIViewControllerExtensions.swift */; };
 		A9407EA3280B3125007D12D3 /* SMHCurrencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9407EA2280B3125007D12D3 /* SMHCurrencyManager.swift */; };
 		A9407EA5280B31ED007D12D3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9407EA4280B31ED007D12D3 /* Constants.swift */; };
@@ -52,6 +54,8 @@
 		29EF9A970B88FFAC70EDD861 /* Pods_Practice_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Practice_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A17E07442821D9140047B8E6 /* SMHSpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMHSpeechRecognizer.swift; sourceTree = "<group>"; };
 		A17E07462821F1830047B8E6 /* SMHRecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMHRecordingViewController.swift; sourceTree = "<group>"; };
+		A17E0748282367870047B8E6 /* SMHAudioAnimationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMHAudioAnimationPresenter.swift; sourceTree = "<group>"; };
+		A17E074A2823D60D0047B8E6 /* SMHAudioSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMHAudioSessionManager.swift; sourceTree = "<group>"; };
 		A9407EA02808629F007D12D3 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		A9407EA2280B3125007D12D3 /* SMHCurrencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMHCurrencyManager.swift; sourceTree = "<group>"; };
 		A9407EA4280B31ED007D12D3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				A9407EA2280B3125007D12D3 /* SMHCurrencyManager.swift */,
+				A17E074A2823D60D0047B8E6 /* SMHAudioSessionManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 			children = (
 				A9407EDD280B87BD007D12D3 /* SMHMainPresenter.swift */,
 				A9407EDF280B87F8007D12D3 /* SMHPickerPresenter.swift */,
+				A17E0748282367870047B8E6 /* SMHAudioAnimationPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -399,6 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A17E074B2823D60D0047B8E6 /* SMHAudioSessionManager.swift in Sources */,
 				A9407EA12808629F007D12D3 /* UIViewControllerExtensions.swift in Sources */,
 				A9407EE0280B87F8007D12D3 /* SMHPickerPresenter.swift in Sources */,
 				C3E529F12803B6910054E626 /* AppDelegate.swift in Sources */,
@@ -413,6 +420,7 @@
 				A17E07452821D9140047B8E6 /* SMHSpeechRecognizer.swift in Sources */,
 				A9407EDB280B7EF8007D12D3 /* SMHCurrencyResponse.swift in Sources */,
 				A9407ED7280B6501007D12D3 /* SMHCurrency.swift in Sources */,
+				A17E0749282367870047B8E6 /* SMHAudioAnimationPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

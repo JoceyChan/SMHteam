@@ -1,4 +1,4 @@
-//
+
 //  SMHCurrencyResponse.swift
 //  Practice-Project
 //

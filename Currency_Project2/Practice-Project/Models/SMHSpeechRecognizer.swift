@@ -13,7 +13,11 @@ protocol SpeechRecognizerTranscriptDelegate {
     func willChangeTranscriptTo(transcript: String)
 }
 
+
+/// A Speech Recognition class that handles the speech recognition engine and microphone recording.
 class SMHSpeechRecognizer {
+    
+    //Boundaries
     enum RecognizerError: Error {
         case nilRecognizer
         case notAuthorizedToRecognize
@@ -34,17 +38,23 @@ class SMHSpeechRecognizer {
         }
     }
     
-    var delegate: SpeechRecognizerTranscriptDelegate?
-    var transcript: String = "" {
-        didSet {
-            delegate?.willChangeTranscriptTo(transcript: transcript)
-        }
-    }
+    //Speech recognizer, and audio vars
     private var audioEngine: AVAudioEngine?
     private var request: SFSpeechAudioBufferRecognitionRequest?
     private var task: SFSpeechRecognitionTask?
     private let recognizer: SFSpeechRecognizer?
     
+    //class delegate used for updating caller of transcipt changes
+    var delegate: SpeechRecognizerTranscriptDelegate?
+    
+    //Running recognizer transcript
+    var transcript: String = "" {
+        didSet {
+            delegate?.willChangeTranscriptTo(transcript: transcript)
+        }
+    }
+    
+    //init checks for permisissions
     init(){
         print("starting engine")
         recognizer = SFSpeechRecognizer()
@@ -76,7 +86,7 @@ class SMHSpeechRecognizer {
     func stopTranscribing() {
         reset()
     }
-    //cancels all active recording
+    //cancels all active recordings
     func reset(){
         task?.cancel()
         audioEngine?.stop()
@@ -85,17 +95,19 @@ class SMHSpeechRecognizer {
         task = nil
     }
     
+    //starts transcribing audio from buffer
     func transcribe() {
-        print("transcribing")
+        //starts transcribing in background
         DispatchQueue(label: "Speech Recognizer Queue", qos: .background).async {
             [ weak self] in
+            //checks to ensure thatthe recognizer is available or no nil
             guard let self = self, let recognizer = self.recognizer, recognizer.isAvailable else {
                 print(RecognizerError.recgonizerIsUnavailable)
                 self?.speakError(RecognizerError.recgonizerIsUnavailable)
                 return
             }
-            print("will start")
-            
+          
+            // attempts to start speech recognition task
             do {
                 let (audioEngine, request) = try Self.prepareEngine()
                 self.audioEngine = audioEngine
@@ -110,6 +122,9 @@ class SMHSpeechRecognizer {
         
     }
     
+    
+    /// Prepares the audio buffer and engine sessions
+    /// - Returns: Resturns an active audio engine, and speech recognition buffer
     private static func prepareEngine() throws -> (AVAudioEngine, SFSpeechAudioBufferRecognitionRequest) {
         let audioEngine = AVAudioEngine()
         
@@ -121,7 +136,7 @@ class SMHSpeechRecognizer {
         try audioSession.setCategory(.record, mode: AVAudioSession.Mode.measurement, options: AVAudioSession.CategoryOptions.duckOthers)
         
         try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
-        
+        try audioSession.setAllowHapticsAndSystemSoundsDuringRecording(true)
         let inputNode = audioEngine.inputNode
         
         let recordingFormat = inputNode.outputFormat(forBus: 0)
@@ -135,6 +150,11 @@ class SMHSpeechRecognizer {
         return (audioEngine, request)
     }
     
+    
+    /// Closure that handles when a recognition task is complete
+    /// - Parameters:
+    ///   - result: recognition was successful
+    ///   - error: recognition failed
     private func recognitionHandler(result: SFSpeechRecognitionResult?, error: Error?){
         let receivedFinalResult = result?.isFinal ?? false
         let receivedError = error != nil
@@ -149,11 +169,19 @@ class SMHSpeechRecognizer {
         }
     }
     
+    
+    
+    /// Takes in a message to update the running transcript
+    /// - Parameter messsage: message string
     private func speak(with messsage: String){
         transcript = messsage
         print(transcript)
     }
     
+    
+    /// Appends the encountered error the running transcript. It is possible for the transcript to contain valid
+    ///  words, and errors at the same time - depending on when the error was encountered
+    /// - Parameter error: <#error description#>
     private func speakError(_ error: Error){
         var errorMessage = ""
         if let error = error as? RecognizerError {
@@ -168,6 +196,7 @@ class SMHSpeechRecognizer {
     
 }
 
+// implements speech recognizer authorization request
 extension SFSpeechRecognizer {
     static func hasAuthorizationToRecognize() async -> Bool {
         await withCheckedContinuation({ continuation in
@@ -178,6 +207,7 @@ extension SFSpeechRecognizer {
     }
 }
 
+// implements recording authorization request
 extension AVAudioSession {
     func hasPermissionToRecord() async -> Bool {
         await withCheckedContinuation({ continuation in

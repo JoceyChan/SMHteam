@@ -142,8 +142,10 @@ extension SMHMainViewController {
 
 // MARK: - Delegates
 extension SMHMainViewController {
-     func recordingCaptured(message: String) {
-        
+     func recordingCaptured(money: Double) {
+         presenter.resetCurrencies()
+         presenter.setFromCurrency(amount: money)
+         
     }
 }
 
